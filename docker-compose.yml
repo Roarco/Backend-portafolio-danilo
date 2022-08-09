@@ -1,0 +1,22 @@
+version: '3.3'
+
+services:
+  postgres:
+      image: postgres:latest
+      container_name: postgresql
+      environment:
+        - POSTGRES_USER=Danilo
+        - POSTGRES_PASSWORD=Danilo_UDC
+        - POSTGRES_DB=Portafolio
+      ports:
+        - "5432:5432"
+      volumes:
+        - "~/postgres_data:/var/lib/postgresql/data"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=Danilo_UDC@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=Danilo_UDC
+    ports:
+      - 5050:80
